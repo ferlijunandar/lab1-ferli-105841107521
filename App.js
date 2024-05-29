@@ -10,7 +10,7 @@ const App = () => {
         justifyContent: "space-between",
         flexDirection: "row",
         marginBottom: 30
-
+        
       }}>
         <View style={{
           backgroundColor: "gray", width: 175, height: 60,
