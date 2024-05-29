@@ -1,36 +1,57 @@
-import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
-export default function App() {
+const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.row}>
+    <View style={{ flex: 1 }}>
+      <View style={{
+        flex: 1,
+        alignItems: "flex-end",
+        justifyContent: "space-between",
+        flexDirection: "row",
+        marginBottom: 30
 
-        <View style={[styles.column, { backgroundColor: 'yellow' }]} />
-        < View style={[styles.column, { backgroundColor: 'green' }]} />
+      }}>
+        <View style={{
+          backgroundColor: "gray", width: 175, height: 60,
+          justifyContent: "center",
+          borderRadius: 15,
+          marginRight: 15,
+          marginBottom: 15,
+
+        }}>
+          <Text style={{
+            fontSize: 21, color: "black",
+            textAlign: "center",
+            fontWeight: "bold",
+          }}>
+            Login
+          </Text>
+        </View>
+
+        <View style={{
+          backgroundColor: "gray", width: 175, height: 60,
+          justifyContent: "center",
+          borderRadius: 15,
+          marginLeft: 15,
+          marginBottom: 15,
+
+        }}>
+          <Text style={{
+
+            fontSize: 21, color: "black",
+            textAlign: "center",
+            fontWeight: "bold",
+          }}>
+            Register
+          </Text>
+        </View>
+
       </View>
-      <View style={styles.row}>
-        <View style={[styles.column, { backgroundColor: 'red' }]} />
-      </View>
-      <View style={styles.row}>
-        <View style={[styles.column, { backgroundColor: 'blue' }]} />
-      </View>
-      <StatusBar style="auto" />
-    </SafeAreaView>
-  );
+
+    </View>
+
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  row: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  column: {
-    flex: 1,
-  },
-});
+export default App;
