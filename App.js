@@ -2,34 +2,31 @@ import React from "react";
 import { StyleSheet, Text, View, TextInput, Image } from "react-native";
 
 const App = () => {
+  const ButtonCustom = ({ color, text }) => {
+    return (
+      <View style={[styles.button, { backgroundColor: color }]}>
+        <Text style={styles.buttonText}>{text}</Text>
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>
-        Welcome Back 
-        </Text>
+      <Text style={styles.title}>Welcome Back</Text>
       <Image
         source={require('./assets/logo1.jpg')}
         style={styles.image}
       />
       <View style={styles.inputContainer}>
-        <Text style={styles.label}>
-          Email Address
-        </Text>
+        <Text style={styles.label}>Email Address</Text>
         <TextInput style={styles.input} placeholder="Enter email address" />
-        <Text style={styles.label}>
-          Password
-          </Text>
+        <Text style={styles.label}>Password</Text>
         <TextInput style={styles.input} placeholder="Enter password" secureTextEntry />
-        <Text style={styles.forgotPassword}>
-          Forget password?
-          </Text>
+        <Text style={styles.forgotPassword}>Forget password?</Text>
       </View>
-      <View style={styles.buttonContainer}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>
-            Login
-            </Text>
-        </View>
+      <View style={styles.buttonRow}>
+        <ButtonCustom color="red" text="Login" />
+        <ButtonCustom color="blue" text="Register" />
       </View>
     </View>
   );
@@ -71,13 +68,14 @@ const styles = StyleSheet.create({
     borderColor: 'blue',
     color: '#0172CB',
   },
-  buttonContainer: {
-    alignItems: 'center',
-    marginBottom: 30,
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    paddingHorizontal: 20,
   },
   button: {
-    backgroundColor: '#0172CB',
-    width: 200,
+    width: '45%',
     height: 60,
     justifyContent: 'center',
     alignItems: 'center',
@@ -86,8 +84,8 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 20,
     color: 'white',
+    fontWeight: 'bold',
   },
 });
 
 export default App;
-
