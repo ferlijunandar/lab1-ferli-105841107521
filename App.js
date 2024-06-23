@@ -1,7 +1,6 @@
-import React from 'react';
-import { View } from 'react-native';
-import TextInputCustom from './components/text input';
-
+import React from "react";
+import { View } from "react-native-web";
+import TextInputContainer from "./components/text input";
 const App = () => {
   return (
     <View style={{
@@ -9,11 +8,9 @@ const App = () => {
       justifyContent: "center",
       alignItems: "center",
     }}>
-      <TextInputCustom name="name" color="black" />
-      <TextInputCustom name="email" color="black" />
-      <TextInputCustom name="Password" color="black" />
+      <TextInputContainer />
     </View>
   );
-}
+};
 
 export default App;
