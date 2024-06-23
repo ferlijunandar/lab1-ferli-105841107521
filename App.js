@@ -1,18 +1,19 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
-import Button from "./components/Button";
+import React from 'react';
+import { View } from 'react-native';
+import TextInputCustom from './components/text input';
+
 const App = () => {
   return (
-    <View style={styles.appContainer}>
-      <Button />
+    <View style={{
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+    }}>
+      <TextInputCustom name="name" color="black" />
+      <TextInputCustom name="email" color="black" />
+      <TextInputCustom name="Password" color="black" />
     </View>
   );
-};
-
-const styles = StyleSheet.create({
-  appContainer: {
-    flex: 1,
-  },
-});
+}
 
 export default App;
