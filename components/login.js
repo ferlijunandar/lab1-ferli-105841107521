@@ -12,10 +12,7 @@ const Login = () => {
   };
     return (
       <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.textContainer}>
-        <TouchableOpacity>
-          <Text style={styles.arrowTextlogin}>&#x276E;</Text>
-        </TouchableOpacity>
+       <View style={styles.textContainer}>
         <Text style={styles.text}>Login</Text>
         </View>
         <View style={styles.inputContainer}>
@@ -65,11 +62,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 40,
     backgroundColor: '#fff', 
-  },
-  arrowTextlogin: {
-    fontSize: 40,
-    marginRight: 50,
-    marginTop: -20,
   },
   text: {
     fontSize: 40,
