@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, ScrollView, TextInput, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
 const singup = () => {
+  const navigation = useNavigation();
   const handleGooglesingup = () => {
     console.log("Logging in with Google");
   };
@@ -38,7 +39,7 @@ const singup = () => {
 
       <View style={styles.AlreadyTextContainer}>
         <Text style={styles.AlreadyText}>Already have an account? </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
           <Text style={styles.arrowText}>&#8594;</Text>
         </TouchableOpacity>
       </View>

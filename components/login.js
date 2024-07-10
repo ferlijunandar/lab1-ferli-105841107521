@@ -1,44 +1,47 @@
 import React from 'react';
 import { View, ScrollView, TextInput, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
+  const navigation = useNavigation();
+
   const handleGoogleLogin = () => {
     console.log("Logging in with Google");
   };
 
   const handleFacebookLogin = () => {
     console.log("Logging in with Facebook");
-    
   };
-    return (
-      <ScrollView contentContainerStyle={styles.container}>
-       <View style={styles.textContainer}>
+
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.textContainer}>
         <Text style={styles.text}>Login</Text>
-        </View>
-        <View style={styles.inputContainer}>
-          <TextInput
-            placeholder="Email"
-            style={styles.textInput}
-          />
-        </View>
-  
-        <View style={styles.inputContainer}>
-          <TextInput
-            placeholder="Password"
-            style={styles.textInput}
-          />
-        </View>
+      </View>
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder="Email"
+          style={styles.textInput}
+        />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder="Password"
+          style={styles.textInput}
+        />
         <View style={styles.forgotPasswordContainer}>
-        <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-        <TouchableOpacity>
-          <Text style={styles.arrowText}>&#8594;</Text>
-        </TouchableOpacity>
-        </View>
-        <TouchableOpacity style={styles.button}>
+         <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+       <Text style={styles.arrowText}>&#8594;</Text>
+      </TouchableOpacity>
+     </View>
+      </View>
+      <TouchableOpacity style={styles.button}>
         <Text style={{ color: '#fff', textAlign: 'center', fontSize: 20, fontWeight: 'bold' }}> Login</Text>
-        </TouchableOpacity>
-  
-        <View style={styles.iconContainer}>
+      </TouchableOpacity>
+
+      <View style={styles.iconContainer}>
         <TouchableOpacity onPress={handleGoogleLogin}>
           <Image
             source={require('../assets/image1.png')}
@@ -52,10 +55,10 @@ const Login = () => {
           />
         </TouchableOpacity>
       </View>
-      </ScrollView>
-    );
-  };
-  
+    </ScrollView>
+  );
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -69,9 +72,8 @@ const styles = StyleSheet.create({
     textAlign: 'flex-start',
     justifyContent: 'center',
     marginBottom: 30,
-    marginTop: 30,
+    marginTop: 10,
   },
-
   inputContainer: {
     marginBottom: 10,
     marginTop: 10,
@@ -101,10 +103,10 @@ const styles = StyleSheet.create({
     color: 'red',
   },
   button: {
-     backgroundColor: 'red',
-     padding: 15,
-     marginTop: 20,
-     borderRadius: 5,
+    backgroundColor: 'red',
+    padding: 15,
+    marginTop: 20,
+    borderRadius: 5,
   },
   iconContainer: {
     flexDirection: 'row',
@@ -117,6 +119,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
 });
-
 
 export default Login;

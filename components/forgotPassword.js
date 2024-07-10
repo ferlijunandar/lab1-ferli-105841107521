@@ -11,9 +11,6 @@ const ForgotPassword = () => {
   return (
     <View style={styles.container}>
          <View style={styles.textContainer}>
-        <TouchableOpacity>
-          <Text style={styles.arrowTextforgot}>&#x276E;</Text>
-        </TouchableOpacity>
       <Text style={styles.title}>Forgot Password</Text>
     </View>
       <Text style={styles.subtitle}>Please, enter your email address. You will receive
@@ -39,11 +36,6 @@ const styles = StyleSheet.create({
     paddingVertical: 40,
     backgroundColor: '#fff',
   },
-  arrowTextforgot: {
-    fontSize: 40,
-    marginRight: 20,
-  },
-
   title: {
     fontSize: 40,
     fontWeight: 'bold',
