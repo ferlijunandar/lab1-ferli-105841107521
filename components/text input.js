@@ -15,7 +15,7 @@ const TextInputCustom = ({ name, color }) => {
         paddingLeft: 10,
         color: color,
       }}
-    />
+    /> 
   );
 };
 

@@ -13,6 +13,10 @@ const Login = () => {
     console.log("Logging in with Facebook");
   };
 
+  const handleLogin = () => {
+    navigation.navigate('VisualSearch');
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.textContainer}>
@@ -31,14 +35,14 @@ const Login = () => {
           style={styles.textInput}
         />
         <View style={styles.forgotPasswordContainer}>
-         <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
-       <Text style={styles.arrowText}>&#8594;</Text>
-      </TouchableOpacity>
-     </View>
+          <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+            <Text style={styles.arrowText}>&#8594;</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <TouchableOpacity style={styles.button}>
-        <Text style={{ color: '#fff', textAlign: 'center', fontSize: 20, fontWeight: 'bold' }}> Login</Text>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={{ color: '#fff', textAlign: 'center', fontSize: 20, fontWeight: 'bold' }}>Login</Text>
       </TouchableOpacity>
 
       <View style={styles.iconContainer}>

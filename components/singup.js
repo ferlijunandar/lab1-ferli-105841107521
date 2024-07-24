@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingVertical: 40,
+    paddingVertical: 10,
     backgroundColor: '#fff',
   },
   text: {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'flex-start',
     justifyContent: 'center',
-    marginBottom: 30,
+    marginBottom: 20,
   },
   inputContainer: {
     marginBottom: 10,
